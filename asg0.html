@@ -1,0 +1,87 @@
+<!-- Tri Nguyen -->
+<!-- tnguy526@ucsc.edu -->  
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Interactive Vector Operations</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h3 {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    label {
+      margin-right: 10px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body onload="main()">
+  <canvas id="example" width="400" height="400">
+    Please use a browser that supports "canvas"
+  </canvas>
+
+  <!-- Input fields for vector v1 -->
+  <div>
+    <h3>Vector v1</h3>
+    <label for="x1-coord">X Coordinate:</label>
+    <input type="number" id="x1-coord" value="2.25" step="0.01" onfocus="this.select()">
+    <label for="y1-coord">Y Coordinate:</label>
+    <input type="number" id="y1-coord" value="2.25" step="0.01" onfocus="this.select()">
+    <label for="z1-coord">Z Coordinate:</label>
+    <input type="number" id="z1-coord" value="0.0" step="0.01" onfocus="this.select()">
+  </div>
+
+  <!-- Input fields for vector v2 -->
+  <div>
+    <h3>Vector v2</h3>
+    <label for="x2-coord">X Coordinate:</label>
+    <input type="number" id="x2-coord" value="1.0" step="0.01" onfocus="this.select()">
+    <label for="y2-coord">Y Coordinate:</label>
+    <input type="number" id="y2-coord" value="1.0" step="0.01" onfocus="this.select()">
+    <label for="z2-coord">Z Coordinate:</label>
+    <input type="number" id="z2-coord" value="0.0" step="0.01" onfocus="this.select()">
+  </div>
+
+  <!-- Operation Selector -->
+  <div>
+    <h3>Operation List</h3>
+    <label for="operation">Choose Operation:</label>
+    <select id="operation">
+      <option value="add">Add</option>
+      <option value="sub">Subtract</option>
+      <option value="mul">Multiply</option>
+      <option value="div">Divide</option>
+      <option value="magnitude">Magnitude</option>
+      <option value="normalize">Normalize</option>
+      <option value="angle">Angle between</option>
+      <option value="area">Area</option>
+    </select>
+    <label for="scalar">Scalar Value:</label>
+    <input type="number" id="scalar" value="2.0" step="0.1" onfocus="this.select()">
+    <button id="operation-btn">Perform Operation</button>
+  </div>
+  
+  <script src="asg0.js"></script>
+  <script src="lib/cuon-matrix-cse160.js"></script>
+</body>
+</html>
